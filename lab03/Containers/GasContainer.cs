@@ -20,7 +20,7 @@ public class GasContainer : Container, IHazardNotifier
 
     public override void EmptyCargo()
     {
-        CargoWeight *= (int) 0.05;
+        CargoWeight = (int)(CargoWeight * 0.05);
     }
 
     public override void LoadCargo(int payload)
