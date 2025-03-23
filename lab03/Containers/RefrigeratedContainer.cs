@@ -14,7 +14,7 @@ public class RefrigeratedContainer : Container
         ["Fish"] = 2,
         ["Meat"] = -15,
         ["Ice Cream"] = -18,
-        ["Frozen Pizza"] = 30,
+        ["Frozen Pizza"] = -30,
         ["Cheese"] = 7.2,
         ["Sausages"] = 5,
         ["Butter"] = 20.5,
@@ -42,7 +42,7 @@ public class RefrigeratedContainer : Container
 
     public override void LoadCargo(int payload)
     {
-        if (CargoWeight + payload > MaxPayload) throw new OverfillException("[Exception] Gas Container overflow");
+        if (CargoWeight + payload > MaxPayload) throw new OverfillException("[Exception] Refrigerated Container overflow");
         CargoWeight += payload;
     }
 }
