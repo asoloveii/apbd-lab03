@@ -27,7 +27,8 @@ public class Ship
         if (Containers.Count == MaxCapacity) 
             throw new OverfillException("[Exception] Cannot add more containers than max capacity");
 
-        int totalWeight = Containers.Sum(c => c.CargoWeight + c.Mass) + container.CargoWeight + container.Mass;
+        int totalWeight = Containers.Sum(c => c.CargoWeight + c.TareWeight) 
+                          + container.CargoWeight + container.TareWeight;
         if (totalWeight > MaxWeight*1000)
             throw new OverfillException("[Exception] The total weight of containers exceeds max weight");
         
