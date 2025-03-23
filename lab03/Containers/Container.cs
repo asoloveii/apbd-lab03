@@ -12,7 +12,7 @@ public abstract class Container
     public int MaxPayload { get; protected set; } // max payload of a container, in kg
     
     private static readonly object _lock = new object();
-    private static int _nextId;
+    private static int _nextId = 1;
 
     protected Container(char containerType, int maxPayload)
     {
