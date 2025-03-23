@@ -1,3 +1,3 @@
-﻿
+﻿using lab03;
 
-Console.WriteLine("Hello, World!");
+App.Run();
