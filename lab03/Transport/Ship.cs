@@ -21,6 +21,11 @@ public class Ship
         Id = _counter++;
     }
 
+    public override string ToString()
+    {
+        return $"Ship {Id} (max speed: {MaxSpeed}, max weight: {MaxWeight}, max capacity: {MaxCapacity})";
+    }
+
     public void LoadContainer(Container container)
     {
         // check for the number of containers

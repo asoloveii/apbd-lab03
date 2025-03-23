@@ -28,6 +28,11 @@ public abstract class Container
         MaxPayload = maxPayload;
         CargoWeight = 0;
     }
+
+    public override string ToString()
+    {
+        return $"Container: {SerialNumber} (max payload: {MaxPayload}, cargo weight: {CargoWeight})";
+    } 
     
     public abstract void EmptyCargo();
     public abstract void LoadCargo(int payload);
