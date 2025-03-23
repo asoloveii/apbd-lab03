@@ -1,4 +1,6 @@
-﻿namespace lab03.Containers;
+﻿using lab03.Exceptions;
+
+namespace lab03.Containers;
 
 public class LiquidContainer : Container, IHazardNotifier
 {
@@ -21,12 +23,13 @@ public class LiquidContainer : Container, IHazardNotifier
 
     public override void LoadCargo(int payload)
     {
-        if (IsHazardous)
-        {
-            if (payload + CargoWeight > MaxPayload * 0.5)
-                Console.WriteLine("[Alert] Attempting to load dangerous amount");
-        } else if (payload + CargoWeight > MaxPayload * 0.9) 
-            Console.WriteLine("[Alert] Attempting to load dangerous amount");
-        else CargoWeight += payload;
+        if (IsHazardous && (payload + CargoWeight > MaxPayload * 0.5))
+            throw new OverfillException("[Exception] Cannot load hazardous liquid beyond 50% capacity");
+
+        if (!IsHazardous && (payload + CargoWeight > MaxPayload * 0.9))
+            throw new OverfillException("[Exception] Cannot load liquid beyond 90% capacity");
+
+        CargoWeight += payload;
+
     }
 }
