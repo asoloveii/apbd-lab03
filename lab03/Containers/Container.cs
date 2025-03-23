@@ -6,10 +6,10 @@ public abstract class Container
     private int Mass { get; set; } // the mass of the cargo, in kg
     private int Height { get; set; } // in cm
     private int TareWeight { get; set; } // the weight of the container itself, in kg
-    private int CargoWeight { get; set; } // the weight of the cargo itself, in kg
+    public int CargoWeight { get; protected set; } // the weight of the cargo itself, in kg
     private int Depth { get; set; } // in cm
-    private string SerialNumber { get; }
-    private int MaxPayload { get; set; } // max payload of a container, in kg
+    public string SerialNumber { get; }
+    public int MaxPayload { get; protected set; } // max payload of a container, in kg
     
     private static readonly object _lock = new object();
     private static int _nextId;
