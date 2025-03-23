@@ -3,11 +3,11 @@ using System;
 
 public abstract class Container
 {
-    private int Mass { get; set; } // the mass of the cargo, in kg
-    private int Height { get; set; } // in cm
-    private int TareWeight { get; set; } // the weight of the container itself, in kg
+    public int Mass { get; set; } // the mass of the cargo, in kg
+    public int Height { get; set; } // in cm
+    public int TareWeight { get; set; } // the weight of the container itself, in kg
     public int CargoWeight { get; protected set; } // the weight of the cargo itself, in kg
-    private int Depth { get; set; } // in cm
+    public int Depth { get; set; } // in cm
     public string SerialNumber { get; }
     public int MaxPayload { get; protected set; } // max payload of a container, in kg
     
